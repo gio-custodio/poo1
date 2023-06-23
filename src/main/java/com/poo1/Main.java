@@ -1,11 +1,14 @@
 package com.poo1;
 
-import javax.swing.JOptionPane;
+import com.poo1.modelo.Departamento;
 
 public class Main {
-    public static void main(String[] args) {
-        String nome = JOptionPane.showInputDialog("args");
+  public static void main(String[] args) {
+    BancoDeDados.universidade.departamentos.add(new Departamento("1", "Departamento de Matemática e Computação"));
 
-        System.out.println("Hello " + nome);
+    for (Departamento d : BancoDeDados.universidade.departamentos) {
+      System.out.println("Nome: " + d.nome);
+      System.out.println("Código: " + d.codigo);
     }
+  }
 }
