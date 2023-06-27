@@ -75,6 +75,16 @@ public class Controlador {
   public ArrayList<Departamento> getAllDepartamentos() {
     return BancoDeDados.universidade.departamentos;
   }
+  
+  public Departamento getDepartamentoPorNome(String nome) {
+    for (Departamento d : BancoDeDados.universidade.departamentos) {
+        if (d.nome.equals(nome)) {
+            return d;
+        }
+    }
+      
+    return null;
+  }
 
   public Funcionario getFuncionarioPorCodigo(String codigo) {
     return BancoDeDados.universidade.getFuncionarioPorCodigo(codigo);
