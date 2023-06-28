@@ -9,7 +9,6 @@ import com.poo1.controlador.Controlador;
 import com.poo1.modelo.Departamento;
 import com.poo1.modelo.Docente;
 import com.poo1.modelo.DocenteEfetivo;
-import com.poo1.modelo.DocenteSubstituto;
 import com.poo1.modelo.Funcionario;
 import com.poo1.modelo.Tecnico;
 import java.util.ArrayList;
@@ -20,18 +19,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabrielribeiro
  */
-public class DocenteSubstitutoDialog extends javax.swing.JDialog {
+public class RelatorioDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroDepartamentoDialog
      */
-    public DocenteSubstitutoDialog(java.awt.Frame parent, boolean modal) {
+    public RelatorioDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
          
         Controlador controlador = new Controlador();
         
-         ArrayList<DocenteSubstituto> docente = controlador.getDocentesSubstitutos();
+         ArrayList<DocenteEfetivo> docente = controlador.getDocentesEfetivos();
         
         DefaultTableModel dtm = new DefaultTableModel();
         
@@ -40,7 +39,7 @@ public class DocenteSubstitutoDialog extends javax.swing.JDialog {
         dtm.addColumn("Nivel");
    
         
-        for (DocenteSubstituto d :  docente) {
+        for (DocenteEfetivo d :  docente) {
             dtm.addRow(new Object [] { d.codigo, d.nome,d.nivel});
         }
           jTable2.setModel(dtm);
@@ -119,13 +118,13 @@ public class DocenteSubstitutoDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DocenteSubstitutoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DocenteSubstitutoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DocenteSubstitutoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DocenteSubstitutoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RelatorioDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -387,7 +386,7 @@ public class DocenteSubstitutoDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                DocenteSubstitutoDialog dialog = new DocenteSubstitutoDialog(new javax.swing.JFrame(), true);
+                RelatorioDialog dialog = new RelatorioDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

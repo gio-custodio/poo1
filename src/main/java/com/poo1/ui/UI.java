@@ -7,6 +7,7 @@ import com.poo1.ui.cadastros.CadastroDocenteEfetivoDialog;
 import com.poo1.ui.cadastros.CadastroDocenteSubstitutoDialog;
 import com.poo1.ui.cadastros.CadastroTecnicoDialog;
 import com.poo1.ui.listagens.DocenteEfetivoDialog;
+import com.poo1.ui.listagens.DocenteSubstitutoDialog;
 import com.poo1.ui.listagens.TecnicosDialog;
 import com.poo1.ui.listagens.TodosDocentesDialog;
 import com.poo1.ui.listagens.TodosFuncionariosDialog;
@@ -314,7 +315,8 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Menu3Item4ActionPerformed
 
     private void Menu3Item5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item5ActionPerformed
-        // TODO add your handling code here:
+        DocenteSubstitutoDialog dialog = new DocenteSubstitutoDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu3Item5ActionPerformed
 
     private void Menu3Item6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item6ActionPerformed
