@@ -14,6 +14,7 @@ import com.poo1.ui.listagens.BuscaFuncionarioPorNome;
 import com.poo1.ui.listagens.TecnicosDialog;
 import com.poo1.ui.listagens.TodosDocentesDialog;
 import com.poo1.ui.listagens.TodosFuncionariosDialog;
+import com.poo1.ui.listagens.RelatorioGeral;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -58,7 +59,6 @@ public class UI extends javax.swing.JFrame {
         Menu1Item4 = new javax.swing.JMenuItem();
         Menu2 = new javax.swing.JMenu();
         Menu2Item1 = new javax.swing.JMenuItem();
-        Menu2Item2 = new javax.swing.JMenuItem();
         Menu2Item3 = new javax.swing.JMenuItem();
         Menu3 = new javax.swing.JMenu();
         Menu3Item1 = new javax.swing.JMenuItem();
@@ -170,15 +170,6 @@ public class UI extends javax.swing.JFrame {
             }
         });
         Menu2.add(Menu2Item1);
-
-        Menu2Item2.setText("Resumo de todos");
-        Menu2Item2.setToolTipText("");
-        Menu2Item2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menu2Item2ActionPerformed(evt);
-            }
-        });
-        Menu2.add(Menu2Item2);
 
         Menu2Item3.setText("Buscar por faixa de gasto");
         Menu2Item3.setToolTipText("");
@@ -337,10 +328,6 @@ public class UI extends javax.swing.JFrame {
         d.setVisible(true);
     }//GEN-LAST:event_Menu3Item8ActionPerformed
 
-    private void Menu2Item2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Menu2Item2ActionPerformed
-
     private void Menu2Item3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Menu2Item3ActionPerformed
@@ -366,7 +353,8 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Menu1Item4ActionPerformed
 
     private void Menu2Item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item1ActionPerformed
-        // TODO add your handling code here:
+          RelatorioGeral r= new RelatorioGeral(this, true);
+          r.setVisible(true);
     }//GEN-LAST:event_Menu2Item1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -431,7 +419,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JMenuItem Menu1Item4;
     private javax.swing.JMenu Menu2;
     private javax.swing.JMenuItem Menu2Item1;
-    private javax.swing.JMenuItem Menu2Item2;
     private javax.swing.JMenuItem Menu2Item3;
     private javax.swing.JMenu Menu3;
     private javax.swing.JMenuItem Menu3Item1;
