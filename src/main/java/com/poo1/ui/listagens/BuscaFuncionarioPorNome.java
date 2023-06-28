@@ -18,29 +18,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabrielribeiro
  */
-public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
+public class BuscaFuncionarioPorNome extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroDepartamentoDialog
      */
-    public BuscaFuncionarioPorCódigo(java.awt.Frame parent, boolean modal) {
+    public BuscaFuncionarioPorNome(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         
-        Controlador controlador = new Controlador();
-        
-         ArrayList<Funcionario> funcionarios = controlador.getAllFuncionarios();
-        
-        DefaultTableModel dtm = new DefaultTableModel();
-        
-        dtm.addColumn("Código");
-        dtm.addColumn("Nome");
-        dtm.addColumn("Nivel de funcionario");
-   
-        
-        for (Funcionario f :  funcionarios) {
-            dtm.addRow(new Object [] { f.codigo, f.nome,f.nivel});
-        }
     }
 
     /**
@@ -60,7 +45,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Código do funcionário para buscar");
+        jLabel1.setText("Nome do funcionário para buscar");
 
         jButton1.setText("BUSCAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +71,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
                             .addComponent(jTextField2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
-                        .addGap(0, 230, Short.MAX_VALUE)))
+                        .addGap(0, 237, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -109,7 +94,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Controlador controlador = new Controlador();
                 
-        Funcionario f = controlador.getFuncionarioPorCodigo(jTextField2.getText());
+        Funcionario f = controlador.getFuncionarioPorNome(jTextField2.getText());
 
         if (f == null) {
             JOptionPane.showMessageDialog(this, "Funcionário não achado");
@@ -117,7 +102,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
             return;
         }
 
-        jEditorPane1.setText("Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.salario);
+        jEditorPane1.setText("Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.calcularSalario());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -128,7 +113,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                BuscaFuncionarioPorCódigo dialog = new BuscaFuncionarioPorCódigo(new javax.swing.JFrame(), true);
+                BuscaFuncionarioPorNome dialog = new BuscaFuncionarioPorNome(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

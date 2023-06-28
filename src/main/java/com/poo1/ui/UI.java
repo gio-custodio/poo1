@@ -6,8 +6,11 @@ import com.poo1.ui.cadastros.CadastroDepartamentoDialog;
 import com.poo1.ui.cadastros.CadastroDocenteEfetivoDialog;
 import com.poo1.ui.cadastros.CadastroDocenteSubstitutoDialog;
 import com.poo1.ui.cadastros.CadastroTecnicoDialog;
+import com.poo1.ui.listagens.BuscaFuncionarioPorCódigo;
 import com.poo1.ui.listagens.DocenteEfetivoDialog;
 import com.poo1.ui.listagens.DocenteSubstitutoDialog;
+import com.poo1.ui.listagens.BuscaFuncionarioPorFaixaDeSalario;
+import com.poo1.ui.listagens.BuscaFuncionarioPorNome;
 import com.poo1.ui.listagens.TecnicosDialog;
 import com.poo1.ui.listagens.TodosDocentesDialog;
 import com.poo1.ui.listagens.TodosFuncionariosDialog;
@@ -320,15 +323,18 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Menu3Item5ActionPerformed
 
     private void Menu3Item6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item6ActionPerformed
-        // TODO add your handling code here:
+        BuscaFuncionarioPorCódigo d = new BuscaFuncionarioPorCódigo(this, true);
+        d.setVisible(true);
     }//GEN-LAST:event_Menu3Item6ActionPerformed
 
     private void Menu3Item7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item7ActionPerformed
-        // TODO add your handling code here:
+        BuscaFuncionarioPorNome d = new BuscaFuncionarioPorNome(this, true);
+        d.setVisible(true);
     }//GEN-LAST:event_Menu3Item7ActionPerformed
 
     private void Menu3Item8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item8ActionPerformed
-        // TODO add your handling code here:
+        BuscaFuncionarioPorFaixaDeSalario d = new BuscaFuncionarioPorFaixaDeSalario(this, true);
+        d.setVisible(true);
     }//GEN-LAST:event_Menu3Item8ActionPerformed
 
     private void Menu2Item2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item2ActionPerformed

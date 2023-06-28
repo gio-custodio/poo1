@@ -152,6 +152,7 @@ public class Controlador {
 
       for (Funcionario funcionario : d.getFuncionarios()) {
         if (funcionario.calcularSalario() >= minimo && funcionario.calcularSalario() <= maximo) {
+            System.out.println(funcionario.nome + funcionario.calcularSalario());
           f.add(funcionario);
         }
       }

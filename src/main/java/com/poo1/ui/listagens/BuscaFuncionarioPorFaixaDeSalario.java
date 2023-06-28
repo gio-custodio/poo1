@@ -18,29 +18,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabrielribeiro
  */
-public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
+public class BuscaFuncionarioPorFaixaDeSalario extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroDepartamentoDialog
      */
-    public BuscaFuncionarioPorCódigo(java.awt.Frame parent, boolean modal) {
+    public BuscaFuncionarioPorFaixaDeSalario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         
-        Controlador controlador = new Controlador();
-        
-         ArrayList<Funcionario> funcionarios = controlador.getAllFuncionarios();
-        
-        DefaultTableModel dtm = new DefaultTableModel();
-        
-        dtm.addColumn("Código");
-        dtm.addColumn("Nome");
-        dtm.addColumn("Nivel de funcionario");
-   
-        
-        for (Funcionario f :  funcionarios) {
-            dtm.addRow(new Object [] { f.codigo, f.nome,f.nivel});
-        }
     }
 
     /**
@@ -57,10 +42,12 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Código do funcionário para buscar");
+        jLabel1.setText("Mínimo de salário");
 
         jButton1.setText("BUSCAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +59,8 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
         jEditorPane1.setEditable(false);
         jScrollPane1.setViewportView(jEditorPane1);
 
+        jLabel2.setText("Máximo de salário");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,26 +68,34 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(0, 230, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(30, 30, 30)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -109,15 +106,18 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Controlador controlador = new Controlador();
                 
-        Funcionario f = controlador.getFuncionarioPorCodigo(jTextField2.getText());
-
-        if (f == null) {
-            JOptionPane.showMessageDialog(this, "Funcionário não achado");
-            
-            return;
+        ArrayList<Funcionario> funcionarios = controlador.getFuncionariosPorFaixaDeSalario(
+            Double.parseDouble(jTextField2.getText()), 
+            Double.parseDouble(jTextField3.getText())
+        );
+        
+        String s = "";
+        
+        for (Funcionario f : funcionarios) {
+            s = s + "Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.calcularSalario() + "\n";
         }
 
-        jEditorPane1.setText("Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.salario);
+        jEditorPane1.setText(s);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -128,7 +128,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                BuscaFuncionarioPorCódigo dialog = new BuscaFuncionarioPorCódigo(new javax.swing.JFrame(), true);
+                BuscaFuncionarioPorFaixaDeSalario dialog = new BuscaFuncionarioPorFaixaDeSalario(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -144,7 +144,9 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

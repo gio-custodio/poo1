@@ -24,7 +24,7 @@ public class Universidade {
   public Funcionario getFuncionarioPorCodigo(String codigo) {
     for (Departamento d : departamentos) {
       for (Funcionario f : d.getFuncionarios()) {
-        if (f.codigo == codigo) {
+        if (f.codigo.equals(codigo)) {
           return f;
         }
       }
@@ -36,7 +36,7 @@ public class Universidade {
   public Funcionario getFuncionarioPorNome(String nome) {
     for (Departamento d : departamentos) {
       for (Funcionario f : d.getFuncionarios()) {
-        if (f.nome == nome) {
+        if (f.nome.equals(nome)) {
           return f;
         }
       }

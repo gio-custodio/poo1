@@ -117,7 +117,7 @@ public class BuscaFuncionarioPorCódigo extends javax.swing.JDialog {
             return;
         }
 
-        jEditorPane1.setText("Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.salario);
+        jEditorPane1.setText("Código: " + f.codigo + "\n" + "Nome: " + f.nome + "\n" + "Nível: " + f.nivel + "\n" + "Salário: " + f.calcularSalario());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
