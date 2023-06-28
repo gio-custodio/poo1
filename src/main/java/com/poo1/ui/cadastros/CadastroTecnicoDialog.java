@@ -9,6 +9,7 @@ import com.poo1.modelo.Departamento;
 import com.poo1.modelo.Docente;
 import com.poo1.modelo.DocenteEfetivo;
 import com.poo1.modelo.Funcionario;
+import com.poo1.modelo.Tecnico;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -16,12 +17,12 @@ import javax.swing.JOptionPane;
  *
  * @author gabrielribeiro
  */
-public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
+public class CadastroTecnicoDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroDepartamentoDialog
      */
-    public CadastroDocenteEfetivoDialog(java.awt.Frame parent, boolean modal) {
+    public CadastroTecnicoDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -44,16 +45,14 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Área");
+        jLabel1.setText("Função");
 
         jLabel2.setText("Código");
 
@@ -88,23 +87,14 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
 
         jLabel5.setText("Nível");
 
-        jLabel6.setText("Titulação");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "D1", "D2", "D3" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "T1", "T2" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Graduação", "Mestrado", "Doutorado", "Livre-Docente", "Titular" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Biológicas", "Exatas", "Humanas", "Saúde" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Assessor", "Laboratório", "Secretário", " " }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -163,12 +153,7 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
                                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(5, 5, 5)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(10, 10, 10))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -192,20 +177,13 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(27, 27, 27))))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(27, 27, 27))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -232,44 +210,32 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
         Funcionario.NivelFuncionario nivel;
         
         switch (jComboBox1.getSelectedItem().toString()) {
-            case "D1" -> nivel = Funcionario.NivelFuncionario.D1;
-            case "D2" -> nivel = Funcionario.NivelFuncionario.D2;
-            case "D3" -> nivel = Funcionario.NivelFuncionario.D3;
+            case "T1" -> nivel = Funcionario.NivelFuncionario.T1;
+            case "T2" -> nivel = Funcionario.NivelFuncionario.T2;
             default -> throw new AssertionError();
         }
         
-        Docente.TitulacaoDocente titulacao;
+      
         
-        switch (jComboBox2.getSelectedItem().toString()) {
-            case "Graduação" -> titulacao = Docente.TitulacaoDocente.Graduação;
-            case "Mestrado" -> titulacao = Docente.TitulacaoDocente.Mestrado;
-            case "Doutorado" -> titulacao = Docente.TitulacaoDocente.Doutorado;
-            case "LivreDocente" -> titulacao = Docente.TitulacaoDocente.LivreDocente;
-            case "Titular" -> titulacao = Docente.TitulacaoDocente.Titular;
-            default -> throw new AssertionError();
-        }
-        
-        DocenteEfetivo.AreaDocenteEfetivo area;
+        Tecnico.FuncaoFuncionarioTecnico função;
         
         switch (jComboBox3.getSelectedItem().toString()) {
-            case "Saúde" -> area = DocenteEfetivo.AreaDocenteEfetivo.Saúde;
-            case "Humanas" -> area = DocenteEfetivo.AreaDocenteEfetivo.Humanas;
-            case "Exatas" -> area = DocenteEfetivo.AreaDocenteEfetivo.Exatas;
-            case "Biológicas" -> area = DocenteEfetivo.AreaDocenteEfetivo.Biológicas;
+            case "Assessor" -> função = Tecnico.FuncaoFuncionarioTecnico.Assesor;
+            case "Laboratório" -> função = Tecnico.FuncaoFuncionarioTecnico.Laboratório;
+            case "Secretário" -> função = Tecnico.FuncaoFuncionarioTecnico.Secretário;
             default -> throw new AssertionError();
         }
         
-        controlador.adicionarDocenteEfetivoFuncionario(
+        controlador.adicionarTecnicoFuncionario(
             d.codigo,
             jTextField2.getText(),
             jTextField3.getText(),
             Double.parseDouble(jTextField4.getText()), 
             nivel,
-            titulacao,
-            area
+           função
         );
         
-        JOptionPane.showMessageDialog(this, "Docente efetivo cadastrado com sucesso");
+        JOptionPane.showMessageDialog(this, "cadastrado com sucesso");
         
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -277,10 +243,6 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
@@ -319,14 +281,22 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroDocenteEfetivoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroTecnicoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroDocenteEfetivoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroTecnicoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroDocenteEfetivoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroTecnicoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroDocenteEfetivoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroTecnicoDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -339,7 +309,7 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroDocenteEfetivoDialog dialog = new CadastroDocenteEfetivoDialog(new javax.swing.JFrame(), true);
+                CadastroTecnicoDialog dialog = new CadastroTecnicoDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -354,7 +324,6 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
@@ -362,7 +331,6 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

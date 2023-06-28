@@ -269,7 +269,7 @@ public class CadastroDocenteEfetivoDialog extends javax.swing.JDialog {
             area
         );
         
-        JOptionPane.showMessageDialog(this, "Docente efetivo cadastrado com sucesso");
+        JOptionPane.showMessageDialog(this, "cadastrado com sucesso");
         
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

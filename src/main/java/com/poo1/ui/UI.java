@@ -4,6 +4,12 @@ import com.poo1.controlador.Controlador;
 import com.poo1.modelo.Departamento;
 import com.poo1.ui.cadastros.CadastroDepartamentoDialog;
 import com.poo1.ui.cadastros.CadastroDocenteEfetivoDialog;
+import com.poo1.ui.cadastros.CadastroDocenteSubstitutoDialog;
+import com.poo1.ui.cadastros.CadastroTecnicoDialog;
+import com.poo1.ui.listagens.DocenteEfetivoDialog;
+import com.poo1.ui.listagens.TecnicosDialog;
+import com.poo1.ui.listagens.TodosDocentesDialog;
+import com.poo1.ui.listagens.TodosFuncionariosDialog;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -286,19 +292,25 @@ public class UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Menu3Item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item1ActionPerformed
-        // TODO add your handling code here:
+        
+        TodosFuncionariosDialog dialog = new TodosFuncionariosDialog(this, true);
+        dialog.setVisible(true);
+       
     }//GEN-LAST:event_Menu3Item1ActionPerformed
 
     private void Menu3Item2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item2ActionPerformed
-        // TODO add your handling code here:
+         TecnicosDialog dialog = new TecnicosDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu3Item2ActionPerformed
 
     private void Menu3Item3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item3ActionPerformed
-        // TODO add your handling code here:
+         TodosDocentesDialog dialog = new TodosDocentesDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu3Item3ActionPerformed
 
     private void Menu3Item4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item4ActionPerformed
-        // TODO add your handling code here:
+        DocenteEfetivoDialog dialog = new DocenteEfetivoDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu3Item4ActionPerformed
 
     private void Menu3Item5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu3Item5ActionPerformed
@@ -336,11 +348,13 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Menu1Item2ActionPerformed
 
     private void Menu1Item3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu1Item3ActionPerformed
-        // TODO add your handling code here:
+         CadastroDocenteSubstitutoDialog dialog = new CadastroDocenteSubstitutoDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu1Item3ActionPerformed
 
     private void Menu1Item4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu1Item4ActionPerformed
-        // TODO add your handling code here:
+        CadastroTecnicoDialog dialog = new CadastroTecnicoDialog(this, true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_Menu1Item4ActionPerformed
 
     private void Menu2Item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item1ActionPerformed
